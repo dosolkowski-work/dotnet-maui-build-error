@@ -9,4 +9,5 @@ jobs:
         uses: actions/checkout@v5
       - name: reproduce
         run: |
+          dotnet workload list
           dotnet workload restore
