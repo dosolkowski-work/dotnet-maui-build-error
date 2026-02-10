@@ -1,0 +1,12 @@
+name: Build error reproduction
+on: [push]
+jobs:
+  build-error-repro:
+    runs-on: "ubuntu-latest"
+    container: "mcr.microsoft.com/dotnet/sdk:10.0-noble"
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - name: reproduce
+        run: |
+          dotnet workload restore
